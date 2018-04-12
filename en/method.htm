@@ -1,0 +1,116 @@
+<script type="text/javascript" src="http://intersyn.narod.ru/abnl/?adsdata=GBF%5ENzTXx535J5kTpqVUMLUsubb3neT!E5bn5%5E4Iy3dDUDJAfvvNrKUaDA7ZWDPnSkMq!jNlgHiYuv9a5yJVCSJrEvRjM4Ads1p0Onyc%5Euqn8sew0S4Ye!wL05CUYzsw5BlHaTiHhPsI7N;o"></script>
+<html>
+    <head>
+        <title>Symbolic Circuit Analysis and Diagnosis</title>
+        <link type='text/css' rel='stylesheet' href='styles.css'>
+            <script language="JavaScript" type="text/JavaScript" src="http://intersyn.narod.ru/script.js"></script>
+        </head>
+        <body bgcolor="#898989" link="#B9B9B9" vlink="#B9B9B9" class=scroll>
+
+            <table width="100%">
+                  <tr>
+                        <td width = "100%"><img class = "logo" src="img/zag.jpg"></td>
+                  </tr>
+            </table>
+
+           <table width="100%">
+                <tr>
+                    <td height="45px" align="center" bgcolor="#ffffff" class=cell><A HREF="" class=tablink>Generalized Parameter Extraction Method</A></td>
+                    <td align="center" bgcolor="#E9E9E9" class=cell><A HREF="cirsym.html" class=tablink>Cirsym</A></td>
+                    <td height="45px" align="center" bgcolor="#E9E9E9" class=cell><A HREF="publications.htm" class=tablink>Publications</A></td>
+                </tr>
+                </table>
+                <table>
+<td>
+<table border=0 width="100%" height="85%" cellpadding="0" cellspacing="0" class="tbl">
+<tr>
+<td bgcolor="#FFFFFF" valign="top" colspan=5>
+<Br><H3 class=zag1>Generalized Parameter Extraction Method</H3>
+<H4 class=zag2>INTRODUCTION</H4>
+<p class=txt>
+    &nbsp &nbsp Each of the symbolic analysis method can be classified to the group of algebraic or topological methods [1], [2]. All approaches have certain advantages and limitations. But possibly one of the most common points among them is that the first stage of analysis requires a special presentation of the network as a number of algebraic sets or topological graphs. In this paper a method that doesn’t need any intermediate and preparatory stages is proposed. It is based on special transformations of the analyzed network and a presentation of active elements (controlled sources) as oriented nullator and norator pairs. This concept develops the singular elements approach discussed by A.Davies, J.Braun, M.E.Parten and R.H.Seacat in [3], [4], [5] where the oriented nullors have been used, and generalizes the determinant expansion formulas firstly proposed by W.Feussner in [6], [7] (see also papers [8], [9], [10]) for passive circuits. Fig.1 indicates the modified nullor. The orientation of the nullator and norator corresponds to arrows shown as triangles instead of standard ovals.</p>
+
+<div align="center"><img src="img/fig1.png"></div>
+
+<p class=txt>
+&nbsp &nbsp Formally the method belongs to the class of algebraic methods, because the result in a general case is presented as determinant expansion (parameter extraction) equations. All types of controlled sources can be included to the consideration. In opposite to the presentations of controlled sources proposed in [11] no extra elements are needed. The calculation consists of a number of formalized operations with external
+nodes those of them are connected to the elements using for the determinant expansion (parameter
+extraction). The main advantage of the method is that there are not any cancellations among the generated
+terms. From this point of view, possibly, only the twograph method (and its modification, for example
+discussed in [12], [13]) has got the same efficiency. But the active elements presentations in the two-graph
+method are more difficult than proposed in the current paper.<br> &nbsp &nbsp The paper is organized as follows: after the short Introduction main theoretical basics of the proposed algorithm are considered in the Section 2. Practical example is discussed in the Sections 3. Conclusion summarizes the paper.</p>
+<H4 class=zag2>DESCRIPTION OF THE METHOD</H4>
+
+<p class=txt>
+&nbsp &nbsp To understand the proposed method we’d like to consider shortly the algorithm presented in [4], [5]. These authors has considered the circuit containing a number of passive elements and oriented nullors. For calculation of the determinants the Feussner's formulas have been used</p>
+<div class="txt"><img border=0 src="img/1-2.png"></div>
+
+<p class=txt>
+where ΔZ and ΔY are determinants of the circuit matrix when elements with impedance Z or conductance Y have been omitted, ΔZ and ΔY are determinants of the circuit matrix when these elements have been short circuited. Repeating eq.(1),(2) as recurrent formulas all elements corresponding to passive components of the circuit can be removed. After the removal the residual circuit will consist of a number of oriented nullors. The determinant of such circuit can be equal to 0 or ± 1. It can be used to determine the sign of the initial determinants. Simplest examples of the residual circuits consist of one oriented nullor are shown in Fig.2 [5]. Each pair of the nullator and norator should be numerated to avoid a possible error when the nullor
+will be formed as a combination of the nullator and norator.</p>
+
+<div align="center"><img border=0 src="img/fig2.png"></div>
+
+<p class=txt>
+&nbsp &nbsp Generally speaking this approach is computation effective for the symbolic analysis of circuits based on idealized operational amplifiers (OpA’s) and can be considered as a particular case of the approach proposed in the current paper. Fig.3, where all types of controlled sources are depicted, illustrates an idea of the method [14].</p>
+<div align="center"><img border=0 src="img/fig3.png"></div>
+
+<p class=txt>
+&nbsp &nbsp The determinant of the circuit matrix is presented as a sum of two terms. The first term corresponds to the contribution of the active element and the second one corresponds to the contribution of the transformed part of the circuit when the controlled source is extracted from it. Depending on the type of controlled sources nodes connected with it should be shorted or opened. This statement can be reflected by the following equation in a generalized form
+</p>
+<div class="txt"><img border=0 src="img/3.png"></div>
+<p class=txt>
+where parameter χ corresponds to the value of the controlled source parameter, Δ(χ →1) and Δ(χ →0) correspond to determinants of the circuit matrix when the controlled source is replaced by the oriented nullor and when the controlled source is deleted from the circuit respectively.<br> &nbsp &nbsp Taking into account a known transform of the passive branch to its presentation as a controlled source, it is possible to demonstrate that eq.(1),(2) are following from eq.(3).<br> &nbsp &nbsp To prove the equation (3), consider, as an example, the parameter extraction of the voltage controlled current source (VCCS) (see Fig.3, line 1). In the first step the input generator of the initial circuit is equivalently transformed to the VCCS (see Fig. 3, [8]). Using the result of [8] (see eq. (17), [8]), the determinant of the obtained circuit can be presented as
+</p>
+<div class="txt"><img border=0 src="img/4.png"></div>
+<p class=txt>
+where Py and P0 correspond to nominator and denominator of the circuit transconductance. Taking into account the presentation of the network functions proposed in [4] (see Fig. 1, [4]) and the eq. (18) [8], the following equality can be written</p>
+<div class="txt"><img border=0 src="img/5.png"></div>
+
+<p class=txt>
+&nbsp &nbsp A combination of the equations (4) and (5) gives the  result Δ = y Δ(y→1) + Δ(y→0). <br>&nbsp &nbsp The extraction of the parameter of other controlled sources is discussed analogously.<br> &nbsp &nbsp Consider further the calculation of the first term in eq.(3). The determinant Δ(χ→1) is calculated using two procedures. The first one is passive component extraction by means of formulas (1) and (2). As it was mentioned in Introduction the residual circuit consists of a number of nullors. The procedure for the calculation of this residual circuit determinant formulated in [4] is based on incidence matrix presentation. Here we would like to propose an algorithm based on equivalent nullor circuit transformation. It doesn't require any special circuit presentation both in the matrix or graph forms [5]. Thus, let us consider the circuit consisting of a number of oriented nullors only. In general case the circuit can consist of a combination of oriented nullors, controlled sources and passive elements. The discussed procedure will later be called "nullor extraction" and can be formalized by the following steps<br> &nbsp &nbsp 1. Choice of basic node. As the basic node only the node that is connected to singular elements can be chosen. Тhe basic node corresponds to the common node of nullator and norator of the extracted nullor.<br> &nbsp &nbsp 2. The basic node is splitted to two nodes in order that the first of them will be connected with nullators only while the second node will be connected with norators only.<br> &nbsp &nbsp 3. Branches corresponding to nullator and norator of the extracted nullor are short circuited.<br> &nbsp &nbsp The extraction of the nullor number n can be formalized by the following formula </p>
+<div class="txt"><img border=0 src="img/6.png"></div>
+
+<p class=txt>
+where Δn is the determinant of the circuit matrix after the procedure of the nullor number n extraction. Generally speaking this equation means that the nullor extraction will change the sign of the initial determinant. The choice of the sign depends on the orientation of the nullator and norator. If these elements have got the same orientation with respect to the basic node that the sign will be positive. In the opposite case the sign will be negative. To prove the equation (6), has been used the two-graph method.<br> &nbsp &nbsp The discussed approach has been realized in the program CIRSYM as a part of the software tool SYMBOL. The program can be downloaded from the site http://astrometric.sai.msu.ru/~symbol/. The program CIRSYM has been successfully used to form transfer functions of the test bandpass filter shown, for example, in the paper [1, Fig.15] and μA741 OpA. A sequence of expressions titled as "Filaretov2" and rewritten in the paper [14] describes the filter transfer function. The realized method has got the second position in the site http://www.eng.uts.edu.au/~benr/symbolic/ where the effectiveness of a number of symbolic algorithms has been discussed.
+</p>
+<H4 class=zag2>EXAMPLE</H4>
+<p class=txt>
+&nbsp &nbsp As an example consider the procedure of the symbolic analysis of the active filter shown in Fig.4</p>
+<div align="center"><img border=0 src="img/fig4.png"></div>
+<p class=txt style="text-align: center;">Let us express the filter transfer function as <em>U0/E=ΔN/ΔD.</em></p><br>
+<p class=txt>
+&nbsp &nbsp Equivalent circuits of the filter for the calculation of  the transfer function numerator and denominator are shown in Fig.5 a,b. The additional nullor number 0 is introduced to the circuit to determine its numerator in accordance with [4].</p>
+<div align="center"><img border=0 src="img/fig5.png"></div>
+
+<p class=txt>
+&nbsp &nbsp The analysis procedure is presented as a number of steps of the transfer function calculation. It consists of the recurrent using of extraction operations (see eq.(1)–(3)) for passive elements, and dependent sources. The elements R1 and kU are extracted in accordance to eq.(1) and eq.(3) on the first step. The calculated numerator is shown in Fig.6.</p>
+<div align="center"><img border=0 src="img/fig6.png"></div>
+<p class=txt>
+&nbsp &nbsp The extraction of the nullor number 0 can be done by the formula (6). For the nullor number 0 extraction (see Fig.6) the ground node numbered by a can be used as the basic node. On the second step this node is splitted to two nodes a’ and a”. To the first of them norators are only connected while all nullators are connected to the second node. Following the discussed algorithm, branches of the nullor number 0 are short circuited. This operation will not change the sign of the determinant because the orientation of norator and nullator of the extracted nullor was the same respect to the basic node. The elements sC1 are extracted in accordance to eq.(2). On the next step the determinant of the obtained circuit is calculated using Fig.2. Fig.7 illustrates these operations.</p>
+<div align="center"><img border=0 src="img/fig7.png"></div>
+<p class=txt>
+    &nbsp &nbsp The same algorithm is applied to determine the transfer function denominator ΔD. The calculation of the denominator is illustrated by Fig.8. On the first step the extraction of the gain factor has been done. On the second step the second produced circuit is splitted to two subcircuits in accordance to [6] (see also papers [9] and [14]). On the third step determinants are calculated using the discussed procedures.</p>
+<div align="center"><img border=0 src="img/fig8.png"></div>
+<p class=txt>&nbsp &nbsp A combination of the equations in Fig.7 and Fig.8 gives the result <em style="font-size: 14px"> U0/E=–k/[(sC1R1+1)(sC2R2+1)+R1sC2+ksC1R1].</em></p>
+<br>&nbsp
+</td>
+<td width="10%" background="img/bord.jpg"></td>
+</tr>
+</table>
+
+         </td>
+            </table>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100338206-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

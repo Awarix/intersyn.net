@@ -1,0 +1,150 @@
+<html>
+<head>
+
+<title>Symbolic Circuit Analysis and Diagnosis</title>
+<link type='text/css' rel='stylesheet' href='styles.css'>
+<script language="JavaScript" type="text/JavaScript" src="http://intersyn.narod.ru/script.js"></script>
+</head>
+<body bgcolor="#898989" link="#B9B9B9" vlink="#B9B9B9" class=scroll>
+
+            <table width="100%">
+            	<tr>
+            		<td width = "100%"><img class = "logo" src="img/zag.jpg"></td>
+            	</tr>
+			</table>
+
+            <table width="100%">
+                <tr>
+                    <td valign = "top" width="200pt">
+
+
+<table border=0 width="100%" cellpadding="0" cellspacing="0" bgcolor="#606060">
+
+<tr>
+<td height="60pt"><A HREF="index.htm"><img src="img/knop1.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="feussner.htm"><img src="img/knop2.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="metod.htm"><img src="img/knop3.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="symsin.htm"><img src="img/knop4.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="scad.htm"><img src="img/knop5.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="matsym.htm"><img src="img/knop6.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<td height="60pt"><A HREF="klin.htm"><img src="img/knop7.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<td height="60pt"><A HREF="download.htm"><img src="img/key2.gif"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+
+<td height="60pt"><A HREF="links.htm"><img src="img/key3.gif"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</table></td>
+
+<td>
+<table border=0 width="100%" height="85%" cellpadding="0" cellspacing="0" class="tbl">
+<tr height=5%>
+<td width="1%" background="img/grayfon.jpg"></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="stat.htm" class=tablink>Публикации</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><a HREF="filaretovov.htm" class=tablink>Диссертация <br>Филаретова В. В.</a></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="kurganov.htm" class=tablink>Диссертация <br>Курганова С. А.</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="dissertationGorshkov.htm" class=tablink>Диссертация <br>Горшкова К. С.</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="konf.htm" class=tablink>Конференции</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="grant.htm" class=tablink>Отчет по гранту РФФИ №15-07-05847</A></td>
+<td width="10%" bgcolor="#898989"></td>
+</tr>
+<tr>
+<td width="1%" background="img/grayfon.jpg"></td>
+<td bgcolor="#FFFFFF" valign="top" colspan=5>
+<Br><H3 class=zag1>Пример 5. Расчет схем с управляемыми источниками</H3>
+<p class="txt">В этом разделе мы обсудим применение МСО для расчета схем замещения электрических цепей, в которых присутствуют управляемые источники (УИ). Параметры управляемых источников выделяются по той же формуле, что и параметры пассивных элементов:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/1.png"></p>
+<p class="txt">где χi∈{R, g, K, G, H, B};    – определитель первой производной схемы, полученной из исходной схемы в результате присвоения параметру χ значения, стремящегося к бесконечности (сопротивление удаляется, проводимость заменяется на схеме идеальным проводником (стягивается), УИ заменяются на нуллоры); Δ(χ=0) – определитель второй производной схемы, которая образовывается в результате нейтрализации выделяемого элемента, то есть, при χ=0 (сопротивление стягивается, проводимость удаляется, УИ нейтрализуется).</p>
+<p style="text-align:center; font-weight:bold; font-size:15px;">1. Расчет схемы с неидеальным ОУ.</p>
+<p class="txt">В случае если в схеме с ОУ требуется учесть конечный коэффициент усиления, то вместо нуллора часто используется источник напряжения, управляемый напряжением (ИНУН). Рассмотрим анализ схемы с ИТУН, представленной ниже:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/2.png"></p>
+<p class="txt"><strong>Расчет схемы числителя.</strong>В схеме соответствующей числителю передаточной функции параметр емкости рС1 может быть сразу вынесен за скобку, так как она включена последовательно с норатором: </p>
+<p style="text-align:center"><img src="metod/Raschet koef/3.png"></p>
+<p class="txt">Если теперь применить формулу (1) для выделения параметра ИТУН, то мы получаем две новых подсхемы:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/4.png"></p>
+<p class="txt">Следует отметить, что вторая подсхема оказалась вырожденной, поскольку в ней образовалась закоротка с нуллатором. То есть, при параллельном соединении управляемого источника напряжения с элементами нуллора, параметр УИ выносится за скобку, а сам ИНУН заменяется на новый нуллор. В то же время, первая подсхема легко упрощается в соответствии с правилами (см. Нуллор):</p>
+<p style="text-align:center"><img src="metod/Raschet koef/5.png"></p>
+<p class="txt"><strong>Расчет схемы знаменателя.</strong> Выделяем параметр управляемого источника, получаем две подсхемы, первая из которых легко упрощается. Во второй подсхеме выделяем параллельно соединенные проводимости pC1 и g2, предварительно объединив их в один элемент:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/6.png"></p>
+<p class="txt">В результате мы получаем символьную функцию:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/7.png"></p>
+<p style="text-align:center; font-weight:bold; font-size:15px;">2. Расчет схемы с взаимной индуктивностью</p>
+<p class="txt">Схемы, включающие в себя индуктивно связанные катушки, можно рассчитывать с помощью МСО, если магнитную связь между катушками моделируется с помощью источников напряжения управляемых током (ИНУТ). Так, рассмотрим простую схему, в которой связанные катушки находятся в разных контурах:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/8.png"></p>
+<p class="txt">Составляем систему уравнений по законам Кирхгофа:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/9.png"></p>
+<p class="txt">Здесь параметр М – взаимная индуктивность, ZM = рМ – операторное сопротивление взаимной индуктивности. Величина UM = IpM соответствует напряжению взаимной индуктивности на одной из связанных катушек. Это напряжение зависит от тока, протекающего через вторую катушку, то есть мы имеем дело с источником напряжения, управляемым током. Поскольку параметр H=U/I соответствует сопротивлению, то если принять H=pM, то можно составить следующую схему замещения:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/10.png"></p>
+<p class="txt">Выполним расчет тока I3 в этой схеме.</p>
+<p class="txt"><strong>Расчет схемы числителя.</strong> После замены источника  и тока   на норатор и нуллатор параметр сопротивления R2 можно сразу удалить:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/11.png"></p>
+<p class="txt">Если теперь выделить по формуле (1) параметр первого ИТУН, то мы получим подсхему   с последовательным соединением двух нораторов, что приводит к её вырождению:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/12.png"></p>
+<p class="txt">Из подсхемы   выделяем параметр второго ИТУН, и после сокращения получаем выражение для числителя:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/13.png"></p>
+<p class="txt"><strong>Расчет схемы знаменателя.</strong> В схеме знаменателя выделяем параметр первого ИТУН, получаем выражения вида:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/14.png"></p>
+<p class="txt">Для удобства выполняем расчет подсхем по отдельности:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/15.png"></p>
+<p class="txt">Наконец, запишем окончательный результат:</p>
+<p style="text-align:center"><img src="metod/Raschet koef/16.png"></p>
+<p class="txt">Расчет системы уравнений по законам Кирхгофа приведет к аналогичному символьному выражению.</p>
+<br>&nbsp;
+</td>
+<td width="10%" background="img/bord.jpg"></td>
+</tr>
+</table>
+
+         </td>
+                </tr>
+            </table>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100338206-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

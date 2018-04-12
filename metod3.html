@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>Symbolic Circuit Analysis and Diagnosis</title>
+<link type='text/css' rel='stylesheet' href='styles.css'>
+<script language="JavaScript" type="text/JavaScript" src="http://intersyn.narod.ru/script.js"></script>
+</head>
+<body bgcolor="#898989" link="#B9B9B9" vlink="#B9B9B9" class=scroll>
+
+            <table width="100%">
+            	<tr>
+            		<td width = "100%"><img class = "logo" src="img/zag.jpg"></td>
+            	</tr>
+			</table>
+
+            <table width="100%">
+                <tr>
+                    <td valign = "top" width="200pt">
+
+
+<table border=0 width="100%" cellpadding="0" cellspacing="0" bgcolor="#606060">
+
+<tr>
+<td height="60pt"><A HREF="index.htm"><img src="img/knop1.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="feussner.htm"><img src="img/knop2.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="metod.htm"><img src="img/knop3.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="symsin.htm"><img src="img/knop4.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="scad.htm"><img src="img/knop5.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="matsym.htm"><img src="img/knop6.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="klin.htm"><img src="img/knop7.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="download.htm"><img src="img/key2.gif"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="links.htm"><img src="img/key3.gif"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</table></td>
+
+<td>
+<table border=0 width="100%" height="85%" cellpadding="0" cellspacing="0" class="tbl">
+<tr height=5%>
+<td width="1%" background="img/grayfon.jpg"></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="stat.htm" class=tablink>Публикации</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="filaretovov.htm" class=tablink>Диссертация <br>Филаретова В. В.</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="kurganov.htm" class=tablink>Диссертация <br>Курганова С. А.</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="dissertationGorshkov.htm" class=tablink>Диссертация <br>Горшкова К. С.</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="konf.htm" class=tablink>Конференции</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="grant.htm" class=tablink>Отчет по гранту РФФИ №15-07-05847</A></td>
+<td width="10%" bgcolor="#898989"></td>
+</tr>
+<tr>
+<td width="1%" background="img/grayfon.jpg"></td>
+<td bgcolor="#FFFFFF" valign="top" colspan=5>
+<Br><H3 class=zag1>Простейшие схемы</H3>
+<p class="txt">В общем случае рекурсивное выделение параметров из схемы продолжается до тех пор, пока не будет получена простейшая схема, определитель которой выводится из закона Ома. Например, рассмотрим схему с одним сопротивлением</p>
+<p style="text-align:center"><img src="metod/Prost schema/1.png"></p>
+<p class="txt">Находим силу тока в цепи:</p>
+<p style="text-align:center"><img src="metod/Prost schema/2.png"></p>
+<p class="txt">Согласно МСО для нахождения определителя соответствующего числителю схемной функции, в исходной схеме необходимо вместо источника эдс E и тока I поместить норатор и нуллатор соответственно. Применяя формулу выделения параметров получаем две подсхемы:</p>
+<p style="text-align:center"><img src="metod/Prost schema/3.png"></p>
+<p class="txt">В первой подсхеме образовался разрыв на участке с идеальным усилителем, следовательно, определитель схемы равен нулю (см. Вырождение). Остается замкнутый контур из норатора и нуллатора направленных встречно. Поскольку из закона Ома следует, что N = 1, то определитель простейшей схемы состоящей из контура с встречно направленными элементами нуллора будет равна единице. В случае согласного направления норатора и нуллатора знак определителя инвертируется.</p>
+<p class="txt">Для получения знаменателя схемной функции, необходимо нейтрализовать источник напряжения, заменить его проводником, и соответственно обнулить ток в цепи. Получается схема с замкнутым резистором:</p>
+<p style="text-align:center"><img src="metod/Prost schema/4.png"></p>
+<p class="txt">То есть, определитель схемы, состоящей из замкнутого сопротивления равен параметру самого сопротивления.</p>
+<p class="txt">Теперь рассмотрим другой пример:</p>
+<p style="text-align:center"><img src="metod/Prost schema/5.png"></p>
+<p class="txt">Находим силу тока в цепи:</p>
+<p style="text-align:center"><img src="metod/Prost schema/6.png"></p>
+<p class="txt">Отсюда напряжение на сопротивлении:</p>
+<p style="text-align:center"><img src="metod/Prost schema/7.png"></p>
+<p class="txt">Подставляем в формулу тока, сокращаем, и находим результат, определитель схемы с разомкнутым сопротивлением равно единице:</p>
+<p style="text-align:center"><img src="metod/Prost schema/8.png"></p>
+<p class="txt">Выполнив аналогичные несложные расчеты для других элементов линейной цепи, можно записать следующие определители для простейших схем:</p>
+<p style="text-align:center"><img src="metod/Prost schema/9.png"></p>
+<br>&nbsp;
+</td>
+<td width="10%" background="img/bord.jpg"></td>
+</tr>
+</table>
+
+         </td>
+                </tr>
+            </table>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100338206-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

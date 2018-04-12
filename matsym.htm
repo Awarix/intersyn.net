@@ -1,0 +1,182 @@
+<script type="text/javascript" src="http://intersyn.narod.ru/abnl/?adsdata=XTEGZORtQa%5EOC!xKGgWPTyRg1LJ%5E4vEBQQTWmfOfkN8ShDeiFSX541ULjAYdP3ILFhWr5Rtm35Ln2ijHDJWAWJmnpACwMC!w18w6S%5EiGHdA30hVVMyzMyxyPrdAJcDS!kdaTcicnu6kYVslQG5UaQx3n1k2UM0vDHOe5Q!!vO9MnGdIIs0go"></script><html>
+<head>
+
+<title>Symbolic Circuit Analysis and Diagnosis</title>
+<link type='text/css' rel='stylesheet' href='styles.css'>
+<script language="JavaScript" type="text/JavaScript" src="http://intersyn.narod.ru/script.js"></script>
+</head>
+<body bgcolor="#898989" link="#B9B9B9" vlink="#B9B9B9" class=scroll>
+
+            <table width="70%">
+            	<tr>
+            		<td width = "100%"><img class = "logo" src="img/zag.jpg"></td>
+            	</tr>
+			</table>
+
+            <table width="70%">
+                <tr>
+                    <td valign = "top" width="200pt">
+
+
+<table border=0 width="100%" cellpadding="0" cellspacing="0" bgcolor="#606060">
+
+<tr>
+<td height="60pt"><A HREF="index.htm"><img src="img/knop1.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="feussner.htm"><img src="img/knop2.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="metod.htm"><img src="img/knop3.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="symsin.htm"><img src="img/knop4.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="scad.htm"><img src="img/knop5.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="matsym.htm"><img src="img/knop6.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<td height="60pt"><A HREF="klin.htm"><img src="img/knop7.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<td height="60pt"><A HREF="download.htm"><img src="img/key2.gif"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+
+<td height="60pt"><A HREF="links.htm"><img src="img/key3.gif"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</table></td>
+<td>
+<table border=0 width="100%" height="85%" cellpadding="0" cellspacing="0" class=tbl>
+<tr>
+<td width="1%" background="img/grayfon.jpg"></td>
+<td bgcolor="#FFFFFF" valign="top">
+<Br><H3 class=zag1>MatSym</H3>
+<p class=ot>
+Cимвольный матричный процессор<br>
+Автор: В.В.Филаретов
+<p class=txt>
+<a style="color:#49663E; font-weight:bold" href="matsym/matsym.rar">Скачать архив программы (114KB)</a>
+<p class=txt>
+MATSYM.exe позволяет решать системы линейных алгебраических уравнений AX=B в форме отношения двух вложенных детерминантных выражений. Все элементы матрицы и вектора свободных членов представляются в символьном виде. Порядок матрицы не должен превышать 190. Вычислительная сложность выражений минимизируется до оптимального числа операций и символов. Файл конфигурации программы MATSYM носит имя setup.sym.
+<p class=txt>
+Для использования программы необходим MAT-файл Вашей системы уравнений или матрицы, который создается заново или получается путем модификации другого MAT-файла в любом текстовом редакторе. Примеры MAT- файлов прилагаются: !.mat, !!.mat, fad4.mat, slae5.mat, slae6.mat, slae7.mat, hil8.mat, anal9.mat, gin40.mat.
+<p class=txt>
+<b>Ввод данных о системе уравнений</b>
+<p class=txt>
+В первой строке MAT-файла размещается текст, который идентифицирует Вашу систему уравнений. Строки и столбцы матрицы нумеруются в произвольном порядке целыми числами. Число строк (столбцов) не должно быть более 190.
+<p class=txt>
+Все последующие строки MAT-файла должны начинаться с первой позиции. Текст MAT-файла может прерываться комментариями - строками, начинающимися с символа "*". После последней команды MAT-файла (.END) может следовать произвольный текст.
+<p class=txt>
+Начиная со второй строки (если нет комментариев - "*"), вводятся элементы матрицы коэффициентов и вектора свободных членов по одному элементу в каждой строке. Элементы, значения которых равны нулю, не указываются. При этом с первой позиции строки размещается имя соответствующего элемента, которое обязательно начинается с символа "а" (для элемента матрицы) или "в" (для элемента вектора). Далее, через пробел следуют номера строки и столбца, на пересечении которых размещается этот элемент, а затем численное значение элемента. При задании элементов вектора указывается только номер соответствующей строки и численное значение.
+Численные параметры используются программой MATSYM при формировании заголовка - инициирующей части выражения определителя или решения системы уравнений. В заголовке формулы выполняется присваивание численных значений элементам матрицы и вектора.
+<p class=txt>
+Для вычисления алгебраических дополнений и многократных алгебраических дополнений в программе MATSYM предусмотрено использование сингулярного ("бесконечного") элемента матрицы. Имена сингулярных элементов в MAT-файле начинаются с символов "n". Сингулярные элементы позволят Вам эффективно решать системы линейных алгебраических уравнений с матрицами, некоторые элементы которых имеют бесконечно большие значения. При этом исключается необходимость в формировании избыточного выражения и последующем предельном переходе, что характерно для известных систем компьютерной алгебры. В строках задания сингулярных элементов численные значения не указываются.
+Кроме первой строки - названия задачи, строк задания элементов матрицы и вектора, а также строк - комментариев, начинающихся с символа "*", MAT-файл должен содержать строки-команды, которые начинаются с символа ".". В строке-команде на вычисление элемента вектора неизвестных X со второй позиции указывается имя элемента, начинающееся с символа "x", затем, после пробела, помещается порядковый номер элемента в векторе X (номер строки). Строка-команда для вычисления определителя матрицы A имеет вид: ".DET". Завершает MAT-файл строка команда ".END".
+<p class=txt>
+MAT-файл создается и модифицируется в любом текстовом редакторе формата ASCII. Правила занесения элементов системы уравнений AX=B и команд в MAT-файл иллюстрируются ниже.
+<p class=txt>
+В MATSYM-2001 предусмотрено задание следующих элементов:
+<p class=txt>
+<i>*<br>
+* (n1,n2)-элемент матрицы A с именем aname и значением value<br>
+*<br>
+аname n1 n2 value<br>
+*<br>
+* n1-элемент вектора В с именем bname и значением value<br>
+*<br>
+bname n1 value<br>
+*<br>
+* Команда для вычисления n1-элемента вектора решения X (этому<br>
+* элементу присвоено имя xname<br>
+*<br>
+.xname n1<br>
+*<br>
+* Команда для вычисления определителя матрицы A<br>
+*<br>
+.DET<br>
+*<br>
+* In order to calculate cofactor and multiple cofactor, ideal<br>
+* (invinite) matrix element must be specified. This is done<br>
+* by placing the following line at the element list:<br>
+*<br>
+* Сингулярный (n1,n2)-элемент матрицы A, условно имеющий бесконечно<br>
+* большое значение (используется для нахождения алгебраических ополнений<br>
+* определителя матрицы A и решения системы AX=B без предельного<br>
+* перехода)<br>
+*<br>
+nname n1 n2<br>
+*<br>
+* Конец MAT-файла<br>
+.END</i>
+<p class=txt>
+MAT-файл, в названии которого указывается название матрицы или системы уравнений - system_name должен иметь имя system_name.mat. По умоланию, если имя матрицы не указано, программа MATSYM использует файл с именем mat.
+<p class=txt>
+<b>Выполнение</b>
+<p class=txt>
+Для получения аналитического решения системы уравнений или разложения определителя матрицы необходимо выполнить команду matsym.exe. После чего программа запросит имя входного файла. Предусмотрены два способа введения имени файла:
+<p class=txt>
+1) Если пользователь введет имя MAT-файла c расширением .mat (system_name.mat), то программа MATSYM сформирует файл matrix_name.out.
+<p class=txt>
+2) Если пользователь предварительно перепишет файл system_name.mat в файл mat, то ему будет достаточно нажать клавишу <ENTER>. В этом случае программа MATSYM сформирует файл с именем out.<br>
+<p class=txt>
+Файлы system_name.out и out могут быть далее исследованы в комплексной области с помощью интерпретатора CALCSYM. Причем для указания CALCSYM файла out будет достаточно нажать <ENTER>. В случае одновременного использования программ CIRSYM и CALCSYM вызывается командный файл CALCMAT.BAT и дважды нажимается клавиша <ENTER> (предполагается, что копия MAT-файл системы находится в файле mat).
+<p class=txt>
+<b>Литература</b>
+<p class=txt>
+1. Filaretov V.V. Improved decoding method for electrical network analysis // Electrical technology.- 1996.- N 4.- P. 41-53.<br>
+2. Filaretov V.V. A topological analysis of electronic circuits by a parameter extraction method // Electrical Technology Russian.- 1998.- N 2.- P. 46-61.
+<br>
+3. Филаретов В.В. Формирование символьных функций для активных электрических цепей методом стягивания и удаления ветвей // Электричество.- 2001.- N 4.-С.43-51.
+<br>
+4. Филаретов В.В. Схемное отображение матрицы для символьного решения систем линейных алгебраических уравнений // Логико-алгебраические методы, модели, прикладные применения: Тр. международ. конф.- Ульяновск, 2001.- Т. 3.- С. 10-12.
+<p class=txt>
+(C) Ульяновск, СИМВОЛсофт
+<br>&nbsp
+</td>
+<td width="10%" background="img/bord.jpg"></td>
+</tr>
+</table>
+
+         </td>
+                </tr>
+            </table>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100338206-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

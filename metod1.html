@@ -1,0 +1,161 @@
+<html>
+<head>
+
+<title>Symbolic Circuit Analysis and Diagnosis</title>
+<link type='text/css' rel='stylesheet' href='styles.css'>
+<script language="JavaScript" type="text/JavaScript" src="http://intersyn.narod.ru/script.js"></script>
+</head>
+<body bgcolor="#898989" link="#B9B9B9" vlink="#B9B9B9" class=scroll>
+
+            <table width="100%">
+            	<tr>
+            		<td width = "100%"><img class = "logo" src="img/zag.jpg"></td>
+            	</tr>
+			</table>
+
+            <table width="100%">
+                <tr>
+                    <td valign = "top" width="200pt">
+
+
+<table border=0 width="100%" cellpadding="0" cellspacing="0" bgcolor="#606060">
+
+<tr>
+<td height="60pt"><A HREF="index.htm"><img src="img/knop1.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="feussner.htm"><img src="img/knop2.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="metod.htm"><img src="img/knop3.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="symsin.htm"><img src="img/knop4.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="scad.htm"><img src="img/knop5.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="matsym.htm"><img src="img/knop6.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<td height="60pt"><A HREF="klin.htm"><img src="img/knop7.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<td height="60pt"><A HREF="download.htm"><img src="img/key2.gif"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="links.htm"><img src="img/key3.gif"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</table></td>
+
+<td>
+<table border=0 width="100%" height="85%" cellpadding="0" cellspacing="0" class="tbl">
+<tr height=5%>
+<td width="1%" background="img/grayfon.jpg"></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="stat.htm" class=tablink>Публикации</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><a HREF="filaretovov.htm" class=tablink>Диссертация <br>Филаретова В. В.</a></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="kurganov.htm" class=tablink>Диссертация <br>Курганова С. А.</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="dissertationGorshkov.htm" class=tablink>Диссертация <br>Горшкова К. С.</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="konf.htm" class=tablink>Конференции</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="grant.htm" class=tablink>Отчет по гранту РФФИ №15-07-05847</A></td>
+<td width="10%" bgcolor="#898989"></td>
+</tr>
+<tr>
+<td width="1%" background="img/grayfon.jpg"></td>
+<td bgcolor="#FFFFFF" valign="top" colspan=5>
+<Br><H3 class=zag1>Пример 1. Символьный анализ простейших цепей (делитель напряжения, RC- и LС-фильтры)</H3>
+<p class="txt">Здесь мы рассмотрим примеры символьного анализа нескольких простейших одноконтурных схем.</p>
+    <p class="txt">Вначале вспомним немного теории.</p>
+<p class="txt">В методе схемных определителей (МСО) искомый отклик цепи (Uвых) представляется в виде отношения двух определителей Uвых=E*ΔN/ΔD. Числитель ΔN здесь является определителем схемы, в которой независимый источник Е и ветвь искомого отклика (Uвых) замещаются нуллором, а знаменатель ΔD – определителем схемы с нейтрализованными входом и выходом.</p>
+    <p class=txt>Формирование определителя выполняется по формуле выделения параметров:</p>
+    <p style="text-align:center"><img src="metod/Symbolic analys/1.png"></p>
+<p class="txt">где χi∈{R, g, K, G, H, B};    – определитель первой производной схемы, полученной из исходной схемы в результате присвоения параметру χ значения, стремящегося к бесконечности (сопротивление удаляется, проводимость заменяется на схеме идеальным проводником (стягивается), управляемые источники (УИ) заменяются на нуллоры); Δ(χ=0) – определитель второй производной схемы, которая образовывается в результате нейтрализации выделяемого элемента, то есть, при χ=0 (сопротивление стягивается, проводимость удаляется, УИ нейтрализуется).</p>
+<p style="text-align:center; font-weight:bold; font-size:15px;">1. Расчет делителя напряжения.</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/2.png"></p>
+<p class=txt>Согласно МСО выходное напряжение рассчитывается по приведенной ниже схемно-алгебраической формуле:</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/3.png"></p>
+<p class=txt>Числитель и знаменатель имеет смысл рассчитывать по отдельности.</p>
+<p class=txt><strong>Рассмотрим схему числителя.</strong>Применяем формулу (1) для выделения параметра сопротивления R2. В результате образуются две новых подсхемы, в первой из которых сопротивление удалено (его параметр стремится к бесконечности, то есть, резистор больше не может пропускать ток и вместо него образуется разрыв), а во второй подсхеме сопротивление заменено идеальным проводником (его параметр становится равным нулю, то есть ток может проходить без потерь).</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/4.png"></p>
+<p class=txt>Во второй подсхеме мы видим, что нуллатор (один треугольник) оказался в замкнутом контуре. Это соответствует вырождению схемы, то есть, ее определитель будет тождественно равен нулю (см. Правила вырождения).</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/5.png"></p>
+<p class=txt>Остается только одна первая подсхема. Попробуем в ней повторить процедуру выделения сопротивления для R1.</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/6.png"></p>
+<p class=txt>Мы видим, что в первой подсхеме при удалении сопротивления элементы нуллора оказались в разрыве, это значит, что определитель подсхемы будет равен нулю (см. Правила вырождения). В результате получаем:</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/7.png"></p>
+<p class=txt>Определитель схемы из контура с нуллором, элементы которого включены встречно, будет равен единице. Таким образом, мы получили значение числителя функции напряжения.</p>
+<p class=txt><strong>Рассмотрим схему знаменателя.</strong>Напомним, что она образована путем нейтрализации входного воздействия. В этом случае источник заменяется на проводник, а выходное напряжение будет равно нулю.</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/8.png"></p>
+<p class=txt>Рассчитываем определитель схемы по формуле (1). Выделяем параметр резистора R2 и получаем две простейшие подсхемы. Их определители известны (см. Простейшие схемы.):</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/9.png"></p>
+<p class=txt>Запишем окончательный результат – классическую формулу для делителя напряжения:</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/10.png"></p>
+<p style="text-align:center; font-weight:bold; font-size:15px;">2. Расчет RC-фильтра.</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/11.png"></p>
+<p class=txt>Теперь повторим процедуру расчета для RC-фильтра. Структура схемы идентична структуре делителя напряжения, анализ которого представлен выше. Только источник теперь имеет параметр комплексной эдс  , а вместо второго резистора теперь в схему помещен конденсатор. В методе схемных определителей реактивные элементы представляются операторными моделями. Причем параметр емкости удобно рассматривать не в качестве операторного сопротивления, как принято в классической теории цепей, а в качестве операторной проводимости: Y<sub>C</sub>(p) = pC, где р – оператор Лапласа.</p>
+<p class=txt><strong>Рассмотрим схему числителя.</strong>Применяем формулу (1) для выделения параметра операторной проводимости рС<sub>1</sub>.</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/12.png"></p>
+<p class=txt><strong>Перейдем к схеме знаменателя.</strong>Заменяем источник на проводник, а выходное напряжение становится равным нулю.</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/13.png"></p>
+<p class=txt>После выделения емкостной проводимости мы получили две простейшие подсхемы. Их определители известны (см.Простейшие схемы.). Таким образом, мы получаем выражение для знаменателя: ΔD= pC<sub>1</sub>R<sub>1</sub>+1.</p>
+<p class=txt>Теперь запишем окончательный результат:</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/15.png"></p>
+<p style="text-align:center; font-weight:bold; font-size:15px;">3. Расчет LC-фильтра</p>
+<p class=txt>Повторим процедуру расчета для схемы LC-фильтра.</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/16.png"></p>
+<p class=txt>Параметр катушки индуктивности рассматривается как операторное сопротивление катушки: Z<sub>L</sub>(p) = pL.</p>
+<p class=txt><strong>Рассмотрим схему числителя.</strong>Применяем формулу (1) для выделения параметра операторной проводимости рС<sub>1</sub>.</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/17.png"></p>
+<p class=txt><strong>Перейдем к схеме знаменателя.</strong>Заменяем источник на проводник, а выходное напряжение становится равным нулю.</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/18.png"></p>
+<p class=txt>Выделим емкостную проводимость мы получили две простейшие подсхемы. Их определители известны (см. Основы МСО. Простейшие схемы.). Таким образом, мы получаем выражение для знаменателя:                ΔD=p<sup>2</sup>C<sub>1</sub>L<sub>1</sub>+1.</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/19.png"></p>
+<p class=txt>Окончательный результат:</p>
+<p style="text-align:center"><img src="metod/Symbolic analys/20.png"></p>
+<br>&nbsp;
+</td>
+<td width="10%" background="img/bord.jpg"></td>
+</tr>
+</table>
+
+         </td>
+                </tr>
+            </table>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100338206-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

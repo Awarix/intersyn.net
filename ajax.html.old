@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	</head>
+	<body>
+		<div id="drop_zone" ondrop="drop_handler(event);" ondragover="dragover_handler(event);" ondragend="dragend_handler(event);">
+			<strong id="caption_1">Перетащите cir файл сюда или воспользуйтесь
+			<label for="cir" class="uploadButton">кнопкой</label><input type="file" name="cir" id="cir" style="display:none;" onchange="click_upload();"></strong>
+			<div class="settings">
+				<label id="formuls_caption" for="formuls" class="toggle">Вывести только формулу</label>
+				<input type="checkbox" id="formuls" class="toggle">
+				<p id="caption_2" class="toggle" onclick="toggle_settings();">Настройки</p>
+			</div>
+			<div id="overlay" class="overlay_settings">
+				<div class="close">
+					<span class="toggle" onclick="toggle_settings_back();">Закрыть [X]</span>
+				</div>
+				<div class="col-5 left">
+
+					<p><b>Введите параметры через пробел:</b></p>
+
+					Параметры бисекции по 5 узлам:
+					<input type="text" name="5bi" size="20" value="0  0.2" maxlength="10" style="width:50px;"><br>
+					Параметры бисекции по 4 узлам:
+					<input type="text" name="4bi" size="20" value="0  0.2" maxlength="10" style="width:50px;"><br>
+					Параметры бисекции по 3 узлам:
+					<input type="text" name="3bi" size="20" value="0  0.2" maxlength="10" style="width:50px;"><br>
+					Параметры бисекции по 2 узлам:
+					<input type="text" name="2bi" size="20" value="3  0.5" maxlength="10" style="width:50px;"><br>
+					<div class="pad">
+					<p><b>Выберите порядок выделения элементов</b><br>
+					<input type="radio" name="order" value="0" checked=""> Пассивный элемент
+					<input type="radio" name="order" value="1"> Активный элемент</p>
+					<p><b>Использовать метод единичной бисекции?</b><br>
+					<input type="radio" name="bi_method" value="0" checked=""> Нет
+					<input type="radio" name="bi_method" value="1"> Да</p>
+					</div>
+
+
+				</div>
+
+				<div class="col-5 right">
+					<div class="pad">
+					<p><b>Выберите символ операторной частоты</b><br>
+					<input type="radio" name="output" value="0" checked=""> P
+					<input type="radio" name="output" value="1"> S</p>
+					<p><b>Выполнять эквивалентные преобразования?</b><br>
+					<input type="radio" name="transform" value="0" checked=""> Нет
+					<input type="radio" name="transform" value="1"> Да</p>
+					<p><b>Не показывать комплексную частоту?</b><br>
+					<input type="radio" name="formula" value="0" checked=""> Нет
+					<input type="radio" name="formula" value="1"> Да</p>
+					<p><b>Сохранять дубликации?</b><br>
+					<input type="radio" name="Dublicates" value="0" checked=""> Нет
+					<input type="radio" name="Dublicates" value="1"> Да</p>
+					<p><b>Нечетный контур?</b><br>
+					<input type="radio" name="loop" value="0"> Нет
+					<input type="radio" name="loop" value="1" checked=""> Да</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div id="response"></div>
+		<div id="output">
+			<div id="output_inner" contenteditable="true"></div>
+		</div>
+		<style type="text/css">
+		body{
+			font-family: 'Open Sans Condensed', sans-serif;
+		}
+		#drop_zone{
+			position: relative;
+			display: block;
+			width: 800px;
+			border: 2px dashed #8b8b8b;
+			margin: auto;
+			margin-top: 50px;
+			border-radius: 50px;
+			background-color: rgba(137, 137, 137, 0.1);
+		}
+		#cation_1, #cation_2{
+			transition: filter 0.5s;
+		}
+		strong{
+			font-weight: lighter;
+			font-size: 50px;
+			display: block;
+			position: relative;
+			padding:50px 100px;
+			text-align: center;
+			margin-top: 50px;
+		}
+		#response{
+			text-align: center;
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
+		#output_inner{
+			width:800px;
+			height:150px;
+			overflow-y: scroll;
+		}
+		#output{
+			position: relative;
+			display: block;
+			width: 800px;
+			margin: auto;
+		}
+		.settings{
+			min-height:50px;
+			width:100%;
+			padding:0px 70px;
+		}
+		.settings>.toggle{
+			font-size: 22px;
+			color: #939393;
+		}
+		.toggle:hover{
+			cursor: pointer
+		}
+		.overlay_settings{
+			position: absolute;
+			display: none;
+			width:100%;
+			height:100%;
+			background-color: rgba(255,255,255,0.5);
+			top:0px;
+			border-radius: 50px;
+		}
+		.col-5{
+			max-width: 50%;
+			display: inline-block;
+			position: relative;
+			padding-top: 10px;
+		}
+		.left{
+			float: left;
+			margin-left: 50px;
+		}
+		.right{
+			float: right;
+			margin-right: 50px;
+		}
+		.close{
+			padding-top:10px;
+			min-width: 100%;
+			overflow: auto;
+		}
+		.close span{
+			float:right;
+			padding-right: 50px;
+    		padding-top: 10px;
+    		font-weight: bold;
+    		color: #939393;
+		}
+		.uploadButton{
+			color: #939393;
+		}
+		.uploadButton:hover{
+			cursor: pointer;
+		}
+		</style>
+		<script type="text/javascript">
+			function parse_formul(content) {
+    start = content.lastIndexOf('detan=');
+    if (start >= 0){
+        var stop = content.lastIndexOf(';');
+        return content.substring(start, stop);
+    } else {
+        content = content.toLowerCase().replace(/\s+/g, '');
+        var match1 = content.match(/[u]\d=/);
+        var match2 = content.match(/[i]\d=/);
+
+        if (match1) {
+            var token = match1[0];
+            var start = content.indexOf(token);
+            var end = content.indexOf(';', start);
+            return content.substring(start, end);
+        }
+
+        if (match2) {
+            var token = match2[0];
+            var start = content.indexOf(token);
+            var end = content.indexOf(';', start);
+            return content.substring(start, end);
+        }
+    }
+}
+			function process_output(content) {
+			    var check_box = document.getElementById('formuls');
+			    content = content.replace(/%/g , "<br>");
+			    if (check_box.checked) {
+			        return parse_formul(content);
+			    } else {
+			        return content;
+			    }
+			}
+			function toggle_settings(){
+				var overlay = document.getElementById("overlay");
+				var to_blur_1 = document.getElementById("caption_1");
+				var to_blur_2 = document.getElementById("caption_2");
+				var to_blur_3 = document.getElementById("formuls_caption");
+				overlay.setAttribute("style", "display:block;");
+				to_blur_1.setAttribute("style", "filter:blur(4px);");
+				to_blur_2.setAttribute("style", "filter:blur(4px);");
+				to_blur_3.setAttribute("style", "filter:blur(4px);");
+			}
+			function toggle_settings_back(){
+				var overlay = document.getElementById("overlay");
+				var to_blur_1 = document.getElementById("caption_1");
+				var to_blur_2 = document.getElementById("caption_2");
+				var to_blur_3 = document.getElementById("formuls_caption");
+				overlay.setAttribute("style", "");
+				to_blur_1.setAttribute("style", "");
+				to_blur_2.setAttribute("style", "");
+				to_blur_3.setAttribute("style", "");
+			}
+			function click_upload(){
+
+				var upload = document.getElementById("cir");
+				var file = upload.files[0];
+				UploadFile(file);
+			}
+			function drop_handler(ev) {
+				console.log("Drop");
+				ev.preventDefault();
+				// If dropped items aren't files, reject them
+				var dt = ev.dataTransfer;
+				if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+					alert("Ваш браузер не поддерживает drag&drop, для загрузки файла воспользуйтесь кнопкой");
+				}
+				if (dt.items) {
+					// Use DataTransferItemList interface to access the file(s)
+					for (var i=0; i < dt.items.length; i++) {
+						if (dt.items[i].kind == "file") {
+							var f = dt.items[i].getAsFile();
+							UploadFile(f);
+						}
+					}
+				} else {
+					// Use DataTransfer interface to access the file(s)
+					for (var i=0; i < dt.files.length; i++) {
+							UploadFile(f);
+					}
+				}
+			}
+
+			function dragover_handler(ev) {
+				console.log("dragOver");
+				// Prevent default select and drag behavior
+				ev.preventDefault();
+			}
+
+			function dragend_handler(ev) {
+				console.log("dragEnd");
+				// Remove all of the drag data
+				var dt = ev.dataTransfer;
+				if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+					alert("Ваш браузер не поддерживает drag&drop, для загрузки файла воспользуйтесь кнопкой");
+				}
+				if (dt.items) {
+					// Use DataTransferItemList interface to remove the drag data
+					for (var i = 0; i < dt.items.length; i++) {
+						dt.items.remove(i);
+					}
+				} else {
+					// Use DataTransfer interface to remove the drag data
+					ev.dataTransfer.clearData();
+				}
+			}
+
+			function UploadFile(file){
+
+				var client = new XMLHttpRequest();
+
+
+				/* Create a FormData instance */
+				var formData = new FormData();
+
+				var order = (document.getElementsByName("order")[0].checked ? document.getElementsByName("order")[0].value : document.getElementsByName("order")[1].value);
+				var bi_method = (document.getElementsByName("bi_method")[0].checked ? document.getElementsByName("bi_method")[0].value : document.getElementsByName("bi_method")[1].value);
+				var output = (document.getElementsByName("output")[0].checked ? document.getElementsByName("output")[0].value : document.getElementsByName("output")[1].value);
+				var transform = (document.getElementsByName("transform")[0].checked ? document.getElementsByName("transform")[0].value : document.getElementsByName("transform")[1].value);
+				var formula = (document.getElementsByName("formula")[0].checked ? document.getElementsByName("formula")[0].value : document.getElementsByName("formula")[1].value);
+				var Dublicates = (document.getElementsByName("Dublicates")[0].checked ? document.getElementsByName("Dublicates")[0].value : document.getElementsByName("Dublicates")[1].value);
+				var loop = (document.getElementsByName("loop")[0].checked ? document.getElementsByName("loop")[0].value : document.getElementsByName("loop")[1].value);
+				/* Add the file */
+				formData.append('5bi', document.getElementsByName("5bi")[0].value)
+				formData.append('4bi', document.getElementsByName("4bi")[0].value)
+				formData.append('3bi', document.getElementsByName("3bi")[0].value)
+				formData.append('2bi', document.getElementsByName("2bi")[0].value)
+				formData.append('order', order)
+				formData.append('bi_method', bi_method)
+				formData.append('output', output)
+				formData.append('transform', transform)
+				formData.append('formula', formula)
+				formData.append('polinom', '0')
+				formData.append('nullor', '0')
+				formData.append('Dublicates', Dublicates)
+				formData.append('loop', loop)
+				formData.append("file_contents", file);
+
+				client.open("post", "http://intersyn.net/api/fetcher.php?action=feed");
+				client.send(formData);
+
+				/* Send to server */
+
+
+				/* Check the response status */
+				client.onreadystatechange = function()
+				{
+				if (client.readyState == 4 && client.status == 200)
+				{
+					var resp = client.responseText;
+					resp = resp.substring(resp.indexOf("{"));
+					var div = document.getElementById('response');
+
+					var Jresp = JSON.parse(resp);
+					if(Jresp.status == "OK"){
+						div.innerHTML = Jresp.urn+".out";
+						client.open('GET', Jresp.urn+".out");
+			            client.onreadystatechange = function() {
+			                var div = document.getElementById('output_inner');
+
+			                var content = client.responseText;
+			                div.innerHTML = process_output(content);
+			            }
+			            client.send();
+					}
+					if(Jresp.status == "Error"){
+						div.innerHTML = "Error: " + Jresp.error_code;
+					}
+					console.log(resp);
+
+				}
+				}
+			}
+		</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100338206-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
+

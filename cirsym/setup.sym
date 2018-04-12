@@ -1,0 +1,22 @@
+Parameters of 5-bisection:
+0  0.2
+Parameters of 4-bisection:
+0  0.2
+Parameters of 3-bisection:
+0  0.5
+Parameters of 2-bisection:
+3  0.5
+Order of extraction (passive - 0, active - 1)
+0
+Single bisection method? (1 - yes, 0 - no)
+0
+Output 's' (1) or 'p' (0)
+0
+Complement equivalent transformation? (0 - no, 1 - yes)
+0
+Output 's' (or 'p') to the formula (1 - yes, 0 - no)
+0
+Polinomial network function (1 - yes, 0 - no)
+0
+Nullor equvalent (1 - yes, 0 - no)
+0

@@ -1,0 +1,16 @@
+
+% Matrix 
+g11=0;
+G12=0;
+G21=0;
+g22=0;
+
+%/R/=0,/g/=2,/C/=0,/L/=0,/G/=2,/K/=0,/B/=0,/H/=0,/N/=0,/M/=0,/Q/=0,/T/=0
+
+detan= 
+g11*(g22)-G12*G21;
+
+% Length of expression = 17 characters
+
+% END
+% .total

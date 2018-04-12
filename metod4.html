@@ -1,0 +1,131 @@
+<html>
+<head>
+
+<title>Symbolic Circuit Analysis and Diagnosis</title>
+<link type='text/css' rel='stylesheet' href='styles.css'>
+<script language="JavaScript" type="text/JavaScript" src="http://intersyn.narod.ru/script.js"></script>
+</head>
+<body bgcolor="#898989" link="#B9B9B9" vlink="#B9B9B9" class=scroll>
+
+            <table width="100%">
+            	<tr>
+            		<td width = "100%"><img class = "logo" src="img/zag.jpg"></td>
+            	</tr>
+			</table>
+
+            <table width="100%">
+                <tr>
+                    <td valign = "top" width="200pt">
+
+
+<table border=0 width="100%" cellpadding="0" cellspacing="0" bgcolor="#606060">
+
+<tr>
+<td height="60pt"><A HREF="index.htm"><img src="img/knop1.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="feussner.htm"><img src="img/knop2.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="metod.htm"><img src="img/knop3.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="symsin.htm"><img src="img/knop4.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="scad.htm"><img src="img/knop5.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<tr>
+<td height="60pt"><A HREF="matsym.htm"><img src="img/knop6.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<td height="60pt"><A HREF="klin.htm"><img src="img/knop7.jpg"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+<td height="60pt"><A HREF="download.htm"><img src="img/key2.gif"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</tr>
+
+<td height="60pt"><A HREF="links.htm"><img src="img/key3.gif"></A></td>
+</tr>
+<tr>
+<td height="15pt" background="img/grayfon.jpg"></td>
+</table></td>
+
+<td>
+<table border=0 width="100%" height="85%" cellpadding="0" cellspacing="0" class="tbl">
+<tr height=5%>
+<td width="1%" background="img/grayfon.jpg"></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="stat.htm" class=tablink>Публикации</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><a HREF="filaretovov.htm" class=tablink>Диссертация <br>Филаретова В. В.</a></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="kurganov.htm" class=tablink>Диссертация <br>Курганова С. А.</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="dissertationGorshkov.htm" class=tablink>Диссертация <br>Горшкова К. С.</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="konf.htm" class=tablink>Конференции</A></td>
+<td align="center" bgcolor="#E9E9E9" class=cell><A HREF="grant.htm" class=tablink>Отчет по гранту РФФИ №15-07-05847</A></td>
+<td width="10%" bgcolor="#898989"></td>
+</tr>
+<tr>
+<td width="1%" background="img/grayfon.jpg"></td>
+<td bgcolor="#FFFFFF" valign="top" colspan=5>
+<Br><H3 class=zag1>Пример 3. Разложение определителя полной схемы
+с помощью бисекции по двум узлам</H3>
+<p class="txt">В этом примере мы применим декомпозиционный подход. То есть, будем при разложении определителя делить схемы на части.</p>
+<p class="txt">Для любой линейной цепи справедлива формула бисекции по двум узлам, позволяющая разделить исходную структуру на две подсхемы:</p>
+<p style="text-align:center"><img src="metod/Razlozh opred/1.png"></p>
+<p class="txt">где Δ1 и Δ2 – определители первой и второй подсхем. Обозначение в скобках после Δ указывает на объединение внешних узлов a и b в соответствующих подсхемах.</p>
+<p class="txt">Выполним расчет определителя полной схемы четвертого порядка (с четыремя узлами).</p>
+<p style="text-align:center"><img src="metod/Razlozh opred/2.png"></p>
+<p class="txt">Напомним формулу выделения параметров:</p>
+<p style="text-align:center"><img src="metod/Razlozh opred/3.png"></p>
+<p class="txt">где χ<sub>i</sub>&isin;{R, g, K, G, H, B};    – определитель первой производной схемы, полученной из исходной схемы в результате присвоения параметру χ значения, стремящегося к бесконечности (сопротивление удаляется, проводимость заменяется на схеме идеальным проводником (стягивается), управляемые источники (УИ) заменяются на нуллоры); Δ(χ=0) – определитель второй производной схемы, которая образована в результате нейтрализации выделяемого элемента, то есть принятия χ=0 (сопротивление стягивается, проводимость удаляется, УИ нейтрализуется).</p>
+<p class="txt">При выделении проводимости g1 образуются две подсхемы Δ (g<sub>1</sub>→∞) и Δ (g<sub>1</sub>=0), анализ которых целесообразно выполнить по отдельности. В первой подсхеме в результате замены g<sub>1</sub> идеальным проводником проводимости g<sub>2</sub> и g<sub>5</sub> будут соединены параллельно, следовательно, их можно объединить. Если теперь выделить этот элемент с параметром (g<sub>2</sub>+g<sub>5</sub>), то образуются две простейшие подсхемы (см. Простейшие схемы), определители которых легко выводятся простым сложением или умножением параметров:</p>
+<p style="text-align:center"><img src="metod/Razlozh opred/4.png"></p>
+<p class="txt">Теперь рассмотрим подсхему Δ (g<sub>1</sub>=0), образованную путем удаления элемента g<sub>1</sub>. Здесь можно эффективно провести бисекцию по двум узлам с номерами «2» и «3» (на рисунке бисекция обозначена пунктирной линией), с помощью формулы. В результате мы получаем четыре подсхемы, из которых три являются простейшими, и только одна, представляющая из себя контур из проводимостей  g<sub>2</sub>, g<sub>3</sub> и g<sub>6</sub>, требует однократного применения формулы выделения.</p>
+<p style="text-align:center"><img src="metod/Razlozh opred/5.png"></p>
+<p class="txt">Итого</p>
+<p style="text-align:center"><img src="metod/Razlozh opred/6.png"></p>
+<p class="txt">Полученный результат легко проверить, рассчитав определитель матрицы коэффициентов, полученной по классическому методу узловых потенциалов:</p>
+<p style="text-align:center"><img src="metod/Razlozh opred/7.png"></p>
+    <br>&nbsp;
+</td>
+<td width="10%" background="img/bord.jpg"></td>
+</tr>
+</table>
+
+         </td>
+                </tr>
+            </table>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-100338206-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

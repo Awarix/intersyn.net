@@ -1,0 +1,31 @@
+% .AC LOG 5 1000 
+
+
+
+E1=1;
+R1=1;
+R2=1;
+R3=1;
+c1=1;
+y1=p*c1;
+c2=1;
+y2=p*c2;
+
+%/R/=3,/g/=0,/C/=2,/L/=0,/G/=0,/K/=0,/B/=0,/H/=0,/N/=1,/M/=0,/Q/=0,/T/=0
+
+% Input: E1 (0,1), output: U1 (4,0)
+
+U1 = E1*
+(
+-R2
+)
+/
+(
+y1*(y2*(R1*R2*R3)+R1*((R2+R3))+R2*R3)+R1
+);
+
+% Length of expression = 43 characters
+
+% END
+
+% TOTAL                                                                      

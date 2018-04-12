@@ -1,0 +1,83 @@
+% A1.dag
+
+
+
+f=1000.000000;
+p=2*3.14159265358979323j*f;
+% Values:
+KU1=1;
+c1=1;
+y1=p*c1;
+c2=1;
+y2=p*c2;
+g1=1;
+
+%/R/=0,/g/=1,/C/=2,/L/=0,/G/=0,/K/=1,/B/=0,/H/=0,/N/=2,/M/=0,/Q/=0,/T/=0
+
+detan= 
+ 0;
+
+% Length of expression = 1 characters
+
+% END
+
+f=1000.000000;
+p=2*3.14159265358979323j*f;
+% Values:
+KU1=1;
+c1=1;
+y1=p*c1;
+c2=1;
+y2=p*c2;
+g1=1;
+g2=1;
+
+%/R/=0,/g/=2,/C/=2,/L/=0,/G/=0,/K/=1,/B/=0,/H/=0,/N/=1,/M/=0,/Q/=0,/T/=0
+
+detan= 
+KU1*y1*y2;
+
+% Length of expression = 9 characters
+
+% END
+
+f=1000.000000;
+p=2*3.14159265358979323j*f;
+% Values:
+KU1=1;
+c1=1;
+y1=p*c1;
+c2=1;
+y2=p*c2;
+g1=1;
+
+%/R/=0,/g/=1,/C/=2,/L/=0,/G/=0,/K/=1,/B/=0,/H/=0,/N/=2,/M/=0,/Q/=0,/T/=0
+
+detan= 
+(g1+y1+y2);
+
+% Length of expression = 10 characters
+
+% END
+
+f=1000.000000;
+p=2*3.14159265358979323j*f;
+% Values:
+KU1=1;
+c1=1;
+y1=p*c1;
+c2=1;
+y2=p*c2;
+g1=1;
+g2=1;
+
+%/R/=0,/g/=2,/C/=2,/L/=0,/G/=0,/K/=1,/B/=0,/H/=0,/N/=1,/M/=0,/Q/=0,/T/=0
+
+detan= 
+g1*(y2*(-KU1+1)+g2)+y1*((g2+y2))+y2*g2;
+
+% Length of expression = 38 characters
+
+% END
+
+% TOTAL                                                                      

@@ -1,0 +1,3 @@
+sh: 1: cirsym: not found
+sh: 1: cirsym: not found
+sh: 1: ю.cirsym: not found
