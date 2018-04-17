@@ -1,0 +1,16 @@
+
+% Matrix 
+g11=1;
+G12=2;
+G21=3;
+g22=4;
+
+%/R/=0,/g/=2,/C/=0,/L/=0,/G/=2,/K/=0,/B/=0,/H/=0,/N/=0,/M/=0,/Q/=0,/T/=0
+
+detan= 
+ 0;
+
+% Length of expression = 1 characters
+
+% END
+% .total
